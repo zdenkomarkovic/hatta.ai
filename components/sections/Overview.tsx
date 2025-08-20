@@ -1,13 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ParticlesBackground from "../ParticlesBackground";
 
 const Overview = () => {
   return (
-    <section id="overview" className="min-h-screen relative bg-gray-900 flex items-center">
-      <div className="absolute inset-0 gradient-overlay" />
-      <ParticlesBackground />
+    <section id="overview" className="min-h-screen relative flex items-center">
+      {/* Desert background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url("https://images.pexels.com/photos/847402/pexels-photo-847402.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop")',
+        }}
+      />
+      
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-gray-900/80" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">

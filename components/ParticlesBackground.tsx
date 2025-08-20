@@ -10,18 +10,28 @@ declare global {
 
 const ParticlesBackground = () => {
   useEffect(() => {
-    // Dinamički učitaj particles.js
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
-    script.onload = () => {
+    // Check if particles.js is already loaded
+    if (window.particlesJS) {
+      initParticles();
+    } else {
+      // Dinamički učitaj particles.js
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+      script.onload = () => {
+        initParticles();
+      };
+      document.head.appendChild(script);
+    }
+
+    function initParticles() {
       if (window.particlesJS) {
         window.particlesJS('particles-js', {
           particles: {
             number: {
-              value: 80,
+              value: 60,
               density: {
                 enable: true,
-                value_area: 800
+                value_area: 1000
               }
             },
             color: {
@@ -35,7 +45,7 @@ const ParticlesBackground = () => {
               }
             },
             opacity: {
-              value: 0.5,
+              value: 0.3,
               random: false,
               anim: {
                 enable: false,
@@ -45,7 +55,7 @@ const ParticlesBackground = () => {
               }
             },
             size: {
-              value: 3,
+              value: 2,
               random: true,
               anim: {
                 enable: false,
@@ -56,14 +66,14 @@ const ParticlesBackground = () => {
             },
             line_linked: {
               enable: true,
-              distance: 150,
+              distance: 120,
               color: "#9333ea",
-              opacity: 0.4,
+              opacity: 0.2,
               width: 1
             },
             move: {
               enable: true,
-              speed: 1,
+              speed: 0.5,
               direction: "none",
               random: false,
               straight: false,
@@ -104,7 +114,7 @@ const ParticlesBackground = () => {
                 speed: 3
               },
               repulse: {
-                distance: 200,
+                distance: 100,
                 duration: 0.4
               },
               push: {
@@ -118,13 +128,13 @@ const ParticlesBackground = () => {
           retina_detect: true
         });
       }
-    };
-    document.head.appendChild(script);
+    }
 
     return () => {
-      // Cleanup
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
+      // Cleanup particles
+      const canvas = document.querySelector('#particles-js canvas');
+      if (canvas) {
+        canvas.remove();
       }
     };
   }, []);
@@ -132,8 +142,8 @@ const ParticlesBackground = () => {
   return (
     <div 
       id="particles-js" 
-      className="absolute inset-0 w-full h-full"
-      style={{ zIndex: 1 }}
+      className="fixed inset-0 w-full h-full pointer-events-none"
+      style={{ zIndex: 0 }}
     />
   );
 };
