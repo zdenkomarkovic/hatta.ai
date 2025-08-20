@@ -47,22 +47,6 @@ html {
   scroll-behavior: smooth;
 }
 
-#particles-js {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  z-index: 0;
-  pointer-events: none;
-}
-
-#particles-js canvas {
-  display: block;
-  vertical-align: bottom;
-  pointer-events: none;
-}
-
 .gradient-overlay {
   background: linear-gradient(135deg, rgba(8, 8, 16, 0.9) 0%, rgba(15, 15, 25, 0.8) 50%, rgba(25, 25, 35, 0.9) 100%);
 }
