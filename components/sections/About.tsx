@@ -9,33 +9,6 @@ const About = () => {
     threshold: 0.1,
   });
 
-  const approaches = [
-    {
-      title: "Graph Neural Networks",
-      description:
-        "Leveraging the power of graph structures to model complex relationships and dependencies in your data.",
-      icon: "🕸️",
-    },
-    {
-      title: "Topological Data Analysis",
-      description:
-        "Uncovering hidden patterns and structures in high-dimensional data using advanced topological methods.",
-      icon: "🔍",
-    },
-    {
-      title: "Non-Euclidean Learning",
-      description:
-        "Applying cutting-edge techniques that go beyond traditional machine learning approaches.",
-      icon: "🌐",
-    },
-    {
-      title: "Research-Driven Solutions",
-      description:
-        "Translating the latest academic research into practical, scalable business applications.",
-      icon: "🔬",
-    },
-  ];
-
   return (
     <section id="about" className="section-padding bg-background">
       <div className="container mx-auto px-6">

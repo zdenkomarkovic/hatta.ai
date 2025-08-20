@@ -32,16 +32,6 @@ const Insights = () => {
     },
   ];
 
-  const getCategoryColor = (category: string) => {
-    const colors = {
-      Research: "bg-blue-900/30 text-blue-300 border-blue-500/20",
-      Industry: "bg-green-900/30 text-green-300 border-green-500/20",
-      Technical: "bg-purple-900/30 text-purple-300 border-purple-500/20",
-      Ethics: "bg-orange-900/30 text-orange-300 border-orange-500/20",
-    };
-    return colors[category as keyof typeof colors] || colors.Research;
-  };
-
   return (
     <section
       id="insights"

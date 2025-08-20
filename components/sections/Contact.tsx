@@ -46,8 +46,8 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className=" max-w-3xl mx-auto">
-            Ready to transform your business with cutting-edge AI? Let's discuss
-            how we can help you achieve your goals.
+            Ready to transform your business with cutting-edge AI? Let`&apos;`s
+            discuss how we can help you achieve your goals.
           </p>
         </motion.div>
 
@@ -58,7 +58,7 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h3 className="text-2xl font-semibold mb-6 text-white">
-              Let's Start a Conversation
+              Let`&apos;`s Start a Conversation
             </h3>
 
             <div className="space-y-6">
