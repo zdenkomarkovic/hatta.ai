@@ -47,13 +47,18 @@ html {
   scroll-behavior: smooth;
 }
 
-.particles-container {
-  position: absolute;
+#particles-js {
+  position: absolute !important;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
   z-index: 1;
+}
+
+#particles-js canvas {
+  display: block;
+  vertical-align: bottom;
 }
 
 .gradient-overlay {
