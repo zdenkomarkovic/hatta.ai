@@ -28,14 +28,14 @@ const ParticlesBackground = () => {
         window.particlesJS('particles-js', {
           particles: {
             number: {
-              value: 60,
+              value: 120,
               density: {
                 enable: true,
-                value_area: 1000
+                value_area: 800
               }
             },
             color: {
-              value: "#9333ea"
+              value: "#a855f7"
             },
             shape: {
               type: "circle",
@@ -45,20 +45,20 @@ const ParticlesBackground = () => {
               }
             },
             opacity: {
-              value: 0.3,
+              value: 0.6,
               random: false,
               anim: {
-                enable: false,
+                enable: true,
                 speed: 1,
                 opacity_min: 0.1,
                 sync: false
               }
             },
             size: {
-              value: 2,
+              value: 3,
               random: true,
               anim: {
-                enable: false,
+                enable: true,
                 speed: 40,
                 size_min: 0.1,
                 sync: false
@@ -66,14 +66,14 @@ const ParticlesBackground = () => {
             },
             line_linked: {
               enable: true,
-              distance: 120,
-              color: "#9333ea",
-              opacity: 0.2,
+              distance: 150,
+              color: "#a855f7",
+              opacity: 0.4,
               width: 1
             },
             move: {
               enable: true,
-              speed: 0.5,
+              speed: 2,
               direction: "none",
               random: false,
               straight: false,
@@ -91,7 +91,7 @@ const ParticlesBackground = () => {
             events: {
               onhover: {
                 enable: true,
-                mode: "repulse"
+                mode: "grab"
               },
               onclick: {
                 enable: true,
@@ -101,9 +101,9 @@ const ParticlesBackground = () => {
             },
             modes: {
               grab: {
-                distance: 400,
+                distance: 200,
                 line_linked: {
-                  opacity: 1
+                  opacity: 0.8
                 }
               },
               bubble: {
@@ -114,7 +114,7 @@ const ParticlesBackground = () => {
                 speed: 3
               },
               repulse: {
-                distance: 100,
+                distance: 150,
                 duration: 0.4
               },
               push: {
