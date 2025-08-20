@@ -5,7 +5,7 @@ import ParticlesBackground from "../ParticlesBackground";
 
 const Overview = () => {
   return (
-    <section id="overview" className="min-h-screen relative desert-bg flex items-center">
+    <section id="overview" className="min-h-screen relative bg-gray-900 flex items-center">
       <div className="absolute inset-0 gradient-overlay" />
       <ParticlesBackground />
       
