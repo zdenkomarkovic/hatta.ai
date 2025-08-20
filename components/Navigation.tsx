@@ -11,7 +11,7 @@ const Navigation = () => {
     { id: "overview", label: "Overview" },
     { id: "about", label: "Our Approach" },
     { id: "services", label: "Services" },
-    { id: "insights", label: "Insights" },
+    { id: "insights", label: "Podcast" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -20,7 +20,7 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 50);
 
       // Update active section based on scroll position
-      const sections = navItems.map(item => document.getElementById(item.id));
+      const sections = navItems.map((item) => document.getElementById(item.id));
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -52,13 +52,13 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-around">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-gradient cursor-pointer"
+            className="text-2xl font-bold text-primary cursor-pointer"
             onClick={() => scrollToSection("overview")}
           >
-            HATTA.ai
+            HATTA.AI
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -68,17 +68,15 @@ const Navigation = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-4 py-2 text-sm font-medium transition-colors ${
-                  activeSection === item.id
-                    ? "text-purple-400"
-                    : "text-gray-300 hover:text-white"
+                className={`relative px-4 py-2 transition-colors ${
+                  activeSection === item.id ? "text-primary" : ""
                 }`}
               >
                 {item.label}
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-500"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
                     initial={false}
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                   />
@@ -86,15 +84,6 @@ const Navigation = () => {
               </motion.button>
             ))}
           </div>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => scrollToSection("contact")}
-            className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-medium transition-colors hover-glow"
-          >
-            Get Started
-          </motion.button>
         </div>
       </div>
     </motion.nav>

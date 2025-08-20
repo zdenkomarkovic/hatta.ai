@@ -12,32 +12,44 @@ const Services = () => {
   const services = [
     {
       title: "Graph ML Consulting",
-      description: "Custom graph neural network solutions for complex relational data problems.",
-      features: ["Network Analysis", "Recommendation Systems", "Fraud Detection", "Knowledge Graphs"],
-      icon: "🔗"
+      description:
+        "Custom graph neural network solutions for complex relational data problems.",
+      features: [
+        "Network Analysis",
+        "Recommendation Systems",
+        "Fraud Detection",
+        "Knowledge Graphs",
+      ],
+      icon: "🔗",
     },
     {
       title: "Topological Deep Learning",
-      description: "Advanced topological methods for understanding data structure and patterns.",
-      features: ["Persistent Homology", "Mapper Algorithm", "Topological Autoencoders", "Shape Analysis"],
-      icon: "🌊"
+      description:
+        "Advanced topological methods for understanding data structure and patterns.",
+      features: [
+        "Persistent Homology",
+        "Mapper Algorithm",
+        "Topological Autoencoders",
+        "Shape Analysis",
+      ],
+      icon: "🌊",
     },
     {
       title: "Research & Development",
-      description: "Collaborative research projects to push the boundaries of AI capabilities.",
-      features: ["Academic Partnerships", "Patent Development", "Publication Support", "Innovation Labs"],
-      icon: "🧪"
+      description:
+        "Collaborative research projects to push the boundaries of AI capabilities.",
+      features: [
+        "Academic Partnerships",
+        "Patent Development",
+        "Publication Support",
+        "Innovation Labs",
+      ],
+      icon: "🧪",
     },
-    {
-      title: "AI Strategy Consulting",
-      description: "Strategic guidance for implementing cutting-edge AI solutions in your organization.",
-      features: ["Technology Assessment", "Implementation Roadmap", "Team Training", "Performance Optimization"],
-      icon: "🎯"
-    }
   ];
 
   return (
-    <section id="services" className="section-padding bg-gray-900">
+    <section id="services" className="section-padding bg-foreground">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -46,15 +58,14 @@ const Services = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
-            Our Services
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Comprehensive AI solutions tailored to your unique challenges and objectives.
+            Comprehensive AI solutions tailored to your unique challenges and
+            objectives.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -74,7 +85,7 @@ const Services = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-3">
                 {service.features.map((feature, featureIndex) => (
                   <div
@@ -88,22 +99,6 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 text-center"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover-glow transition-all"
-          >
-            Discuss Your Project
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   );

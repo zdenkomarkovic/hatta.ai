@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: 8 8 16;
-  --foreground: 250 250 250;
+  --background: 90, 3%, 14%;
+  --foreground: 30, 1%, 29%;
   --card: 15 15 25;
   --card-foreground: 250 250 250;
   --popover: 15 15 25;
   --popover-foreground: 250 250 250;
-  --primary: 147 51 234;
-  --primary-foreground: 255 255 255;
-  --secondary: 30 30 45;
-  --secondary-foreground: 250 250 250;
-  --muted: 25 25 35;
+  --primary: 43, 46%, 61%;
+  --primary-foreground: 90, 1%, 35%;
+  --secondary: 42, 39%, 73%;
+  --secondary-foreground: 210, 3%, 43%;
+  --muted: 60, 3%, 86%;
   --muted-foreground: 161 161 170;
   --accent: 147 51 234;
   --accent-foreground: 255 255 255;
@@ -33,14 +33,21 @@
 body {
   color: hsl(var(--foreground));
   background: hsl(var(--background));
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", "Arial", sans-serif;
   font-weight: 600;
   line-height: 1.2;
+  color: hsl(var(--primary));
 }
 
 html {
@@ -48,7 +55,12 @@ html {
 }
 
 .gradient-overlay {
-  background: linear-gradient(135deg, rgba(8, 8, 16, 0.9) 0%, rgba(15, 15, 25, 0.8) 50%, rgba(25, 25, 35, 0.9) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(8, 8, 16, 0.9) 0%,
+    rgba(15, 15, 25, 0.8) 50%,
+    rgba(25, 25, 35, 0.9) 100%
+  );
 }
 
 .glass-effect {

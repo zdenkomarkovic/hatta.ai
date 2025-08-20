@@ -10,7 +10,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "HATTA.ai - AI Consulting & Graph Machine Learning",
-  description: "AI consulting company specializing in graph machine learning and topological deep learning. Translating complex non-Euclidean methods into practical business solutions.",
+  description:
+    "AI consulting company specializing in graph machine learning and topological deep learning. Translating complex non-Euclidean methods into practical business solutions.",
   keywords: [
     "AI consulting",
     "graph machine learning",
@@ -20,19 +21,21 @@ export const metadata: Metadata = {
     "machine learning consulting",
     "artificial intelligence",
     "data science",
-    "research consulting"
+    "research consulting",
   ],
   authors: [{ name: "HATTA.ai" }],
   openGraph: {
     title: "HATTA.ai - AI Consulting & Graph Machine Learning",
-    description: "AI consulting company specializing in graph machine learning and topological deep learning.",
+    description:
+      "AI consulting company specializing in graph machine learning and topological deep learning.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "HATTA.ai - AI Consulting & Graph Machine Learning",
-    description: "AI consulting company specializing in graph machine learning and topological deep learning.",
+    description:
+      "AI consulting company specializing in graph machine learning and topological deep learning.",
   },
   robots: {
     index: true,
@@ -47,7 +50,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body
+        className={`${inter.variable} font-sans antialiased  text-white text-base md:text-xl`}
+      >
         <ParticlesBackground />
         {children}
       </body>

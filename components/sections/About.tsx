@@ -12,28 +12,32 @@ const About = () => {
   const approaches = [
     {
       title: "Graph Neural Networks",
-      description: "Leveraging the power of graph structures to model complex relationships and dependencies in your data.",
-      icon: "🕸️"
+      description:
+        "Leveraging the power of graph structures to model complex relationships and dependencies in your data.",
+      icon: "🕸️",
     },
     {
       title: "Topological Data Analysis",
-      description: "Uncovering hidden patterns and structures in high-dimensional data using advanced topological methods.",
-      icon: "🔍"
+      description:
+        "Uncovering hidden patterns and structures in high-dimensional data using advanced topological methods.",
+      icon: "🔍",
     },
     {
       title: "Non-Euclidean Learning",
-      description: "Applying cutting-edge techniques that go beyond traditional machine learning approaches.",
-      icon: "🌐"
+      description:
+        "Applying cutting-edge techniques that go beyond traditional machine learning approaches.",
+      icon: "🌐",
     },
     {
       title: "Research-Driven Solutions",
-      description: "Translating the latest academic research into practical, scalable business applications.",
-      icon: "🔬"
-    }
+      description:
+        "Translating the latest academic research into practical, scalable business applications.",
+      icon: "🔬",
+    },
   ];
 
   return (
-    <section id="about" className="section-padding bg-gradient-to-b from-gray-900 to-gray-800">
+    <section id="about" className="section-padding bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -42,34 +46,8 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
-            Our Approach
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We combine cutting-edge research with practical implementation to deliver 
-            AI solutions that push the boundaries of what's possible.
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Approach</h2>
         </motion.div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {approaches.map((approach, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="glass-effect rounded-xl p-6 hover-glow transition-all duration-300"
-            >
-              <div className="text-4xl mb-4">{approach.icon}</div>
-              <h3 className="text-xl font-semibold mb-3 text-white">
-                {approach.title}
-              </h3>
-              <p className="text-gray-400 leading-relaxed">
-                {approach.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -77,14 +55,36 @@ const About = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="glass-effect rounded-xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-4 text-white">
-              Why Choose HATTA.ai?
-            </h3>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Our team bridges the gap between academic research and industry application. 
-              We don't just implement existing solutions – we pioneer new approaches that 
-              give your business a competitive edge in the AI landscape.
+          <div className="glass-effect rounded-xl p-8 max-w-6xl mx-auto space-y-5 text-muted">
+            <p className=" leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p className=" leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.
+            </p>
+            <p className=" leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim id est laborum.
             </p>
           </div>
         </motion.div>
