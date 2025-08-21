@@ -51,24 +51,26 @@ const Services = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="glass-effect rounded-xl  hover-glow transition-all duration-300 overflow-hidden"
+              className="glass-effect rounded-xl hover-glow transition-all duration-300 overflow-hidden group cursor-pointer"
             >
-              <Image
-                src={service.image}
-                width={800}
-                height={800}
-                alt="hatta ai"
-                className="w-full h-1/2 object-cover"
-              />
-              <div className="flex items-start mb-6">
-                <div>
-                  <h3 className="text-2xl font-semibold mb-3 text-white">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed">
+              <div className="relative h-64 overflow-hidden">
+                <Image
+                  src={service.image}
+                  width={800}
+                  height={800}
+                  alt="hatta ai"
+                  className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                />
+                <div className="absolute inset-0 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-900/90">
+                  <p className="text-gray-300 leading-relaxed text-center">
                     {service.description}
                   </p>
                 </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold text-white text-center">
+                    {service.title}
+                  </h3>
               </div>
             </motion.div>
           ))}
