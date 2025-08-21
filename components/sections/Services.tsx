@@ -59,9 +59,9 @@ const Services = () => {
                   width={800}
                   height={800}
                   alt="hatta ai"
-                  className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                  className="w-full h-full object-cover transition-all duration-300 group-hover:opacity-0"
                 />
-                <div className="absolute inset-0 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-900/90">
+                <div className="absolute inset-0 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gray-900/90">
                   <p className="text-gray-300 leading-relaxed text-center">
                     {service.description}
                   </p>
@@ -69,8 +69,8 @@ const Services = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-semibold text-white text-center">
-                    {service.title}
-                  </h3>
+                  {service.title}
+                </h3>
               </div>
             </motion.div>
           ))}
