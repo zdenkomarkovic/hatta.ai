@@ -11,40 +11,22 @@ const Services = () => {
 
   const services = [
     {
-      title: "Graph ML Consulting",
+      title: "AI Agents",
       description:
-        "Custom graph neural network solutions for complex relational data problems.",
-      features: [
-        "Network Analysis",
-        "Recommendation Systems",
-        "Fraud Detection",
-        "Knowledge Graphs",
-      ],
-      icon: "🔗",
+      "Our BCG responsible AI consulting team helps organizations execute an strategic approach to responsible ai through a tailored program based on five pillars",
+    image: "/hero.jpg",
     },
-    {
-      title: "Topological Deep Learning",
+     {
+      title: "Generative AI",
       description:
-        "Advanced topological methods for understanding data structure and patterns.",
-      features: [
-        "Persistent Homology",
-        "Mapper Algorithm",
-        "Topological Autoencoders",
-        "Shape Analysis",
-      ],
-      icon: "🌊",
+      "Our BCG responsible AI consulting team helps organizations execute an strategic approach to responsible ai through a tailored program based on five pillars",
+    image: "/hero.jpg",
     },
-    {
-      title: "Research & Development",
+      {
+      title: "Responsible AI",
       description:
-        "Collaborative research projects to push the boundaries of AI capabilities.",
-      features: [
-        "Academic Partnerships",
-        "Patent Development",
-        "Publication Support",
-        "Innovation Labs",
-      ],
-      icon: "🧪",
+      "Our BCG responsible AI consulting team helps organizations execute an strategic approach to responsible ai through a tailored program based on five pillars",
+    image: "/hero.jpg",
     },
   ];
 
