@@ -41,7 +41,7 @@ const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h2>
-
+ 
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -53,7 +53,9 @@ const Services = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="glass-effect rounded-xl p-8 hover-glow transition-all duration-300"
             >
-          
+              <div className="flex items-start mb-6">
+             
+                <div>
                   <h3 className="text-2xl font-semibold mb-3 text-white">
                     {service.title}
                   </h3>
@@ -63,7 +65,7 @@ const Services = () => {
                 </div>
               </div>
 
-            
+
             </motion.div>
           ))}
         </div>
