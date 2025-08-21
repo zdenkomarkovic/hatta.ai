@@ -63,16 +63,7 @@ const Services = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
-                {service.features.map((feature, featureIndex) => (
-                  <div
-                    key={featureIndex}
-                    className="bg-purple-900/30 rounded-lg px-3 py-2 text-sm text-purple-300 border border-purple-500/20"
-                  >
-                    {feature}
-                  </div>
-                ))}
-              </div>
+            
             </motion.div>
           ))}
         </div>
