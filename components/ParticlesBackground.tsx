@@ -158,7 +158,7 @@ const ParticlesBackground = () => {
     };
 
     // Proveri da li je particles.js već učitan
-    if (window.particlesJS) {
+    if (typeof window.particlesJS !== 'undefined') {
       initParticles();
     } else {
       loadParticles();
