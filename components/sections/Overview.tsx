@@ -1,18 +1,12 @@
 "use client";
 
-import Image from "@/node_modules/next/image";
+
 import { motion } from "framer-motion";
 
 const Overview = () => {
   return (
     <section id="overview" className="hero">
-      {/* Desert background image */}
-      <Image
-        src={"/hero.jpg"}
-        fill
-        alt="hatta ai"
-        className="absolute inset-0 object-cover bg-center bg-no-repeat"
-      />
+
 
       <div className="hero__inner">
         <div className="text-left">
