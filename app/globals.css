@@ -73,13 +73,13 @@ html {
 
 .container {
   width: 100%;
-  max-width: var(--container);
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* White Header Styling */
-.white-header {
+/* Header Styling */
+header {
   background: #FFFFFF;
   color: #111111;
   padding: 1rem 2rem;
@@ -92,7 +92,7 @@ html {
   z-index: 1000;
 }
 
-.white-header a {
+header a {
   color: #111111;
   text-decoration: none;
   margin-left: 1.5rem;
@@ -101,11 +101,11 @@ html {
   transition: all 0.3s ease;
 }
 
-.white-header a:hover {
-  border-bottom: 2px solid #C8A951;
+header a:hover {
+  border-bottom: 2px solid #C8A951; /* zlatni underline */
 }
 
-.white-header .logo {
+header .logo {
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 800;
   color: #111111;
@@ -218,10 +218,10 @@ html {
   .hero p {
     max-width: 100%;
   }
-  .white-header {
+  header {
     padding: 0.75rem 1rem;
   }
-  .white-header a {
+  header a {
     margin-left: 1rem;
   }
 }

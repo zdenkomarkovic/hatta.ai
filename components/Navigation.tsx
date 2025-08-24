@@ -53,12 +53,29 @@ const Navigation = () => {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="white-header fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        style={{
+          background: '#FFFFFF',
+          color: '#111111',
+          padding: '1rem 2rem',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          borderBottom: '1px solid #EDEDED',
+          position: 'sticky',
+          top: 0,
+          zIndex: 1000
+        }}
       >
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="logo text-2xl font-bold cursor-pointer"
+          className="text-2xl font-bold cursor-pointer"
           onClick={() => scrollToSection("overview")}
+          style={{
+            fontFamily: 'Playfair Display, Georgia, serif',
+            fontWeight: 800,
+            color: '#111111'
+          }}
         >
           HATTA.AI
         </motion.div>
@@ -71,10 +88,25 @@ const Navigation = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection(item.id)}
-              className={`relative px-4 py-2 transition-colors text-black hover:border-b-2 hover:border-[#C8A951] ${
-                activeSection === item.id ? "border-b-2 border-[#C8A951]" : ""
+              className={`relative px-4 py-2 transition-colors ${
+                activeSection === item.id ? "border-b-2" : ""
               }`}
-              style={{ marginLeft: "1.5rem" }}
+              style={{ 
+                marginLeft: '1.5rem',
+                color: '#111111',
+                textDecoration: 'none',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 500,
+                borderBottomColor: activeSection === item.id ? '#C8A951' : 'transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderBottom = '2px solid #C8A951';
+              }}
+              onMouseLeave={(e) => {
+                if (activeSection !== item.id) {
+                  e.currentTarget.style.borderBottom = 'none';
+                }
+              }}
             >
               {item.label}
             </motion.button>
