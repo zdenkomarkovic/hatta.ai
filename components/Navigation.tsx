@@ -15,26 +15,7 @@ const Navigation = () => {
     { id: "contact", label: "Contact" },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
 
-      // Update active section based on scroll position
-      const sections = navItems.map((item) => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 100;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(navItems[i].id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
