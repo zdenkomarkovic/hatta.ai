@@ -69,26 +69,23 @@ const Navigation = () => {
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-4 py-2 transition-colors ${
-                  activeSection === item.id ? "border-b-2" : ""
-                }`}
+               className={`relative px-4 py-2 transition-colors border-b-2 ${
+                 activeSection === item.id ? "border-[#C8A951]" : "border-transparent"
+               }`}
                 style={{ 
                   marginLeft: '1.5rem',
                   color: '#111111',
                   textDecoration: 'none',
                   fontFamily: 'Inter, sans-serif',
-                  fontWeight: 500,
-                  borderBottomColor: activeSection === item.id ? '#C8A951' : 'transparent'
+                 fontWeight: 500
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderBottom = '2px solid #C8A951';
+                 e.currentTarget.style.borderBottomColor = '#C8A951';
                 }}
                 onMouseLeave={(e) => {
                   if (activeSection !== item.id) {
-                    e.currentTarget.style.borderBottom = 'none';
+                   e.currentTarget.style.borderBottomColor = 'transparent';
                   }
                 }}
               >
@@ -147,8 +144,6 @@ const Navigation = () => {
                 duration: 0.3, 
                 delay: isMobileMenuOpen ? index * 0.1 : 0 
               }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection(item.id)}
               className={`text-2xl font-semibold transition-colors hover:border-b-2 hover:border-[#C8A951] ${
                 activeSection === item.id ? "text-[#C8A951] border-b-2 border-[#C8A951]" : "text-white"
