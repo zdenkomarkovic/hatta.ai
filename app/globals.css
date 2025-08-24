@@ -158,43 +158,43 @@ header .logo {
 
 .hero::after {
   content: "";
-  position: absolute;
+  position: absolute; 
   inset: 0;
   background: linear-gradient(180deg, rgba(0,0,0,0.20), rgba(0,0,0,0.75) 80%);
-  z-index: 0;
+  z-index: 0; 
   pointer-events: none;
 }
 
 .hero__inner {
-  position: relative;
+  position: relative; 
   z-index: 1;
   width: 100%;
   max-width: 900px;
   margin-left: max(24px, calc((100vw - var(--container)) / 2 + 24px));
 }
 
-.hero h1 {
+.hero h1{
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 800;
   letter-spacing: -0.3px;
   line-height: 1.06;
   font-size: clamp(2.6rem, 6vw, 4rem);
-  color: #fff;
+  color: #fff; /* bela kao McKinsey */
   margin: 0 0 1rem 0;
 }
 
-.hero p {
+.hero p{
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-weight: 300;
-  color: var(--muted);
+  color: var(--muted); /* svetlo siva, visoka čitljivost */
   font-size: clamp(1.05rem, 1.7vw, 1.35rem);
   line-height: 1.6;
   margin: 0 0 2rem 0;
   max-width: 720px;
 }
 
-/* Button Styling */
-.btn {
+/* ===== Dugme – belo, tanak okvir (McKinsey stil) ===== */
+.btn{
   display: inline-block;
   font-family: "Inter", sans-serif;
   font-weight: 500;
@@ -205,13 +205,13 @@ header .logo {
   transition: all .25s ease;
 }
 
-.btn--outline {
+.btn--outline{
   border: 1px solid #fff;
   color: #fff;
   background: transparent;
 }
 
-.btn--outline:hover {
+.btn--outline:hover{
   background: #fff;
   color: #000;
 }
