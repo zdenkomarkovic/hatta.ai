@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Navigation = () => {
-  const [activeSection, setActiveSection] = useState("overview");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -34,7 +33,7 @@ const Navigation = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-        style={{
+  }, [navItems]);
           background: '#FFFFFF',
           color: '#111111',
           padding: '1rem 2rem',
