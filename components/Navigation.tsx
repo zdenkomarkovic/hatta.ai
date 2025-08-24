@@ -39,84 +39,87 @@ const Navigation = () => {
         style={{
           background: '#FFFFFF',
           color: '#111111',
-          padding: '1rem 2rem',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
           borderBottom: '1px solid #EDEDED',
           position: 'sticky',
           top: 0,
           zIndex: 1000
         }}
       >
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold cursor-pointer"
-          onClick={() => scrollToSection("overview")}
-          style={{
-            fontFamily: 'Playfair Display, Georgia, serif',
-            fontWeight: 800,
-            color: '#111111'
-          }}
-        >
-          HATTA.AI
-        </motion.div>
+        <div className="container mx-auto" style={{ 
+          padding: '1rem 2rem',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center'
+        }}>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="text-2xl font-bold cursor-pointer"
+            onClick={() => scrollToSection("overview")}
+            style={{
+              fontFamily: 'Playfair Display, Georgia, serif',
+              fontWeight: 800,
+              color: '#111111'
+            }}
+          >
+            HATTA.AI
+          </motion.div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center">
-          {navItems.map((item) => (
-            <motion.button
-              key={item.id}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection(item.id)}
-              className={`relative px-4 py-2 transition-colors ${
-                activeSection === item.id ? "border-b-2" : ""
-              }`}
-              style={{ 
-                marginLeft: '1.5rem',
-                color: '#111111',
-                textDecoration: 'none',
-                fontFamily: 'Inter, sans-serif',
-                fontWeight: 500,
-                borderBottomColor: activeSection === item.id ? '#C8A951' : 'transparent'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderBottom = '2px solid #C8A951';
-              }}
-              onMouseLeave={(e) => {
-                if (activeSection !== item.id) {
-                  e.currentTarget.style.borderBottom = 'none';
-                }
-              }}
-            >
-              {item.label}
-            </motion.button>
-          ))}
-        </div>
-
-        {/* Mobile Menu Button */}
-        <motion.button
-          whileTap={{ scale: 0.95 }}
-          onClick={toggleMobileMenu}
-          className="md:hidden p-2 text-black focus:outline-none"
-          aria-label="Toggle mobile menu"
-        >
-          <div className="w-6 h-6 flex flex-col justify-center items-center">
-            <motion.span
-              animate={isMobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-              className="w-6 h-0.5 bg-current mb-1 origin-center transition-all duration-300"
-            />
-            <motion.span
-              animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="w-6 h-0.5 bg-current mb-1 transition-all duration-300"
-            />
-            <motion.span
-              animate={isMobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-              className="w-6 h-0.5 bg-current origin-center transition-all duration-300"
-            />
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center">
+            {navItems.map((item) => (
+              <motion.button
+                key={item.id}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => scrollToSection(item.id)}
+                className={`relative px-4 py-2 transition-colors ${
+                  activeSection === item.id ? "border-b-2" : ""
+                }`}
+                style={{ 
+                  marginLeft: '1.5rem',
+                  color: '#111111',
+                  textDecoration: 'none',
+                  fontFamily: 'Inter, sans-serif',
+                  fontWeight: 500,
+                  borderBottomColor: activeSection === item.id ? '#C8A951' : 'transparent'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderBottom = '2px solid #C8A951';
+                }}
+                onMouseLeave={(e) => {
+                  if (activeSection !== item.id) {
+                    e.currentTarget.style.borderBottom = 'none';
+                  }
+                }}
+              >
+                {item.label}
+              </motion.button>
+            ))}
           </div>
-        </motion.button>
+
+          {/* Mobile Menu Button */}
+          <motion.button
+            whileTap={{ scale: 0.95 }}
+            onClick={toggleMobileMenu}
+            className="md:hidden p-2 text-black focus:outline-none"
+            aria-label="Toggle mobile menu"
+          >
+            <div className="w-6 h-6 flex flex-col justify-center items-center">
+              <motion.span
+                animate={isMobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                className="w-6 h-0.5 bg-current mb-1 origin-center transition-all duration-300"
+              />
+              <motion.span
+                animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+                className="w-6 h-0.5 bg-current mb-1 transition-all duration-300"
+              />
+              <motion.span
+                animate={isMobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                className="w-6 h-0.5 bg-current origin-center transition-all duration-300"
+              />
+            </div>
+          </motion.button>
+        </div>
       </motion.nav>
 
       {/* Mobile Menu Overlay */}
