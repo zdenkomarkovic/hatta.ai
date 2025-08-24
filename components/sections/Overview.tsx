@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Overview = () => {
   return (
-    <section id="overview" className="min-h-screen relative flex items-center">
+    <section id="overview" className="hero">
       {/* Desert background image */}
       <Image
         src={"/hero.jpg"}
@@ -14,16 +14,13 @@ const Overview = () => {
         className="absolute inset-0 object-cover bg-center bg-no-repeat"
       />
 
-      {/* Dark overlay for better text readability */}
-      {/* <div className="absolute inset-0 bg-gray-900/80" /> */}
-
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="hero__inner">
+        <div className="text-left">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold mb-6"
+            className="hero-title"
           >
             HATTA.ai
           </motion.h1>
@@ -32,7 +29,7 @@ const Overview = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl mb-8 leading-relaxed"
+            className="hero-subtitle"
           >
             AI consulting company specializing in{" "}
             <span className=" font-semibold">graph machine learning</span> and{" "}
@@ -43,7 +40,7 @@ const Overview = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className=" mb-12 max-w-3xl mx-auto"
+            className="hero-description"
           >
             We work at the frontier of research and consulting, translating
             complex non-Euclidean methods into practical, high-impact business
@@ -64,7 +61,7 @@ const Overview = () => {
                   .getElementById("services")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className=" px-8 py-4 bg-primary rounded-lg font-semibold text-lg hover-glow transition-all"
+              className="btn btn--outline"
             >
               Explore Our Services
             </motion.button>
@@ -77,7 +74,7 @@ const Overview = () => {
                   .getElementById("about")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="border px-8 py-4 rounded-lg font-semibold text-lg transition-all"
+              className="btn btn--outline"
             >
               Learn More
             </motion.button>

@@ -53,69 +53,56 @@ const Navigation = () => {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "glass-effect shadow-lg" : "bg-transparent"
-        }`}
+        className="white-header fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       >
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold text-primary cursor-pointer"
-              onClick={() => scrollToSection("overview")}
-            >
-              HATTA.AI
-            </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          className="logo text-2xl font-bold cursor-pointer"
+          onClick={() => scrollToSection("overview")}
+        >
+          HATTA.AI
+        </motion.div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <motion.button
-                  key={item.id}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative px-4 py-2 transition-colors ${
-                    activeSection === item.id ? "text-primary" : ""
-                  }`}
-                >
-                  {item.label}
-                  {activeSection === item.id && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-                      initial={false}
-                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    />
-                  )}
-                </motion.button>
-              ))}
-            </div>
-
-            {/* Mobile Menu Button */}
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center">
+          {navItems.map((item) => (
             <motion.button
+              key={item.id}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={toggleMobileMenu}
-              className="md:hidden p-2 text-white focus:outline-none"
-              aria-label="Toggle mobile menu"
+              onClick={() => scrollToSection(item.id)}
+              className={`relative px-4 py-2 transition-colors text-black hover:border-b-2 hover:border-[#C8A951] ${
+                activeSection === item.id ? "border-b-2 border-[#C8A951]" : ""
+              }`}
+              style={{ marginLeft: "1.5rem" }}
             >
-              <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <motion.span
-                  animate={isMobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-                  className="w-6 h-0.5 bg-current mb-1 origin-center transition-all duration-300"
-                />
-                <motion.span
-                  animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                  className="w-6 h-0.5 bg-current mb-1 transition-all duration-300"
-                />
-                <motion.span
-                  animate={isMobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-                  className="w-6 h-0.5 bg-current origin-center transition-all duration-300"
-                />
-              </div>
+              {item.label}
             </motion.button>
-          </div>
+          ))}
         </div>
+
+        {/* Mobile Menu Button */}
+        <motion.button
+          whileTap={{ scale: 0.95 }}
+          onClick={toggleMobileMenu}
+          className="md:hidden p-2 text-black focus:outline-none"
+          aria-label="Toggle mobile menu"
+        >
+          <div className="w-6 h-6 flex flex-col justify-center items-center">
+            <motion.span
+              animate={isMobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+              className="w-6 h-0.5 bg-current mb-1 origin-center transition-all duration-300"
+            />
+            <motion.span
+              animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+              className="w-6 h-0.5 bg-current mb-1 transition-all duration-300"
+            />
+            <motion.span
+              animate={isMobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+              className="w-6 h-0.5 bg-current origin-center transition-all duration-300"
+            />
+          </div>
+        </motion.button>
       </motion.nav>
 
       {/* Mobile Menu Overlay */}
@@ -146,8 +133,8 @@ const Navigation = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection(item.id)}
-              className={`text-2xl font-semibold transition-colors ${
-                activeSection === item.id ? "text-primary" : "text-white"
+              className={`text-2xl font-semibold transition-colors hover:border-b-2 hover:border-[#C8A951] ${
+                activeSection === item.id ? "text-[#C8A951] border-b-2 border-[#C8A951]" : "text-white"
               }`}
             >
               {item.label}

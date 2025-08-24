@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import ParticlesBackground from "@/components/ParticlesBackground";
 
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
@@ -49,9 +56,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="sr" className="scroll-smooth">
       <body
-        className={`${inter.variable} font-sans antialiased  text-white text-base md:text-xl`}
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased text-white text-base md:text-xl`}
       >
         <ParticlesBackground />
         {children}
