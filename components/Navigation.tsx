@@ -1,19 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection] = useState("");
 
-  const navItems = [
+  const navItems = useMemo(() => [
     { id: "overview", label: "Overview" },
     { id: "about", label: "Our Approach" },
     { id: "services", label: "Services" },
     { id: "insights", label: "Podcast" },
     { id: "contact", label: "Contact" },
-  ];
+  ], []);
 
   useEffect(() => {
     // Add any useEffect logic here if needed
