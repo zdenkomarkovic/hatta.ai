@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const navItems = [
     { id: "overview", label: "Overview" },
@@ -14,7 +15,9 @@ const Navigation = () => {
     { id: "contact", label: "Contact" },
   ];
 
-
+  useEffect(() => {
+    // Add any useEffect logic here if needed
+  }, [navItems]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -33,7 +36,7 @@ const Navigation = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-  }, [navItems]);
+        style={{
           background: '#FFFFFF',
           color: '#111111',
           padding: '1rem 2rem',
