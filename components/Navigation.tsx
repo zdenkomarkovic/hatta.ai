@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("overview");
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
