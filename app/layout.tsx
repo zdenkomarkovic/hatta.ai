@@ -8,10 +8,7 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
 });
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["700", "800"],
-});
+
 
 export const metadata: Metadata = {
   title: "HATTA.ai - AI Consulting & Graph Machine Learning",
