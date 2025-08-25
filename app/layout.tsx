@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter} from "next/font/google";
 import "./globals.css";
 import ParticlesBackground from "@/components/ParticlesBackground";
 
