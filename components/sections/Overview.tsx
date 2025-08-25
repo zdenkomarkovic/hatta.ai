@@ -14,27 +14,24 @@ const Overview = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="hero-title"
           >
-            HATTA.ai
+            HATTA.AI
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="hero-subtitle"
           >
             AI consulting company specializing in{" "}
-            <span className=" font-semibold">graph machine learning</span> and{" "}
-            <span className=" font-semibold">topological deep learning</span>
+            <span className="font-semibold">graph machine learning</span> and{" "}
+            <span className="font-semibold">topological deep learning</span>
           </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hero-description"
           >
             We work at the frontier of research and consulting, translating
             complex non-Euclidean methods into practical, high-impact business

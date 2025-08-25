@@ -35,7 +35,7 @@ const Navigation = () => {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        className=""
         style={{
           background: '#FFFFFF',
           color: '#111111',
@@ -65,7 +65,7 @@ const Navigation = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center text-xl">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}

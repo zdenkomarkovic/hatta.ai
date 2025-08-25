@@ -41,7 +41,8 @@ const ParticlesBackground = () => {
     };
 
     const initParticles = () => {
-      if (window.particlesJS) {
+      // Proveri da li je particles.js učitana
+      if (typeof window.particlesJS === 'function') {
         console.log("Initializing particles");
         window.particlesJS("particles-js", {
           particles: {
@@ -138,22 +139,14 @@ const ParticlesBackground = () => {
               push: {
                 particles_nb: 4,
               },
-              remove: {
-                particles_nb: 2,
-              },
             },
           },
           retina_detect: true,
         });
-
-        // Omogući pointer events za interaktivnost
-        const particlesDiv = document.getElementById("particles-js");
-        if (particlesDiv) {
-          particlesDiv.style.pointerEvents = "auto";
-          particlesDiv.style.zIndex = "1";
-        }
       } else {
-        console.error("particlesJS not found");
+        console.log("Particles.js not loaded yet, retrying...");
+        // Pokušaj ponovo za 100ms
+        setTimeout(initParticles, 100);
       }
     };
 

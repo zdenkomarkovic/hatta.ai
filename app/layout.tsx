@@ -6,13 +6,11 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
-  variable: "--font-inter",
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["700", "800"],
-  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
@@ -36,7 +34,7 @@ export const metadata: Metadata = {
     description:
       "AI consulting company specializing in graph machine learning and topological deep learning.",
     type: "website",
-    locale: "en_US",
+    locale: "sr_RS",
   },
   twitter: {
     card: "summary_large_image",
@@ -56,10 +54,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sr" className="scroll-smooth">
-      <body
-        className={`${inter.variable} ${playfair.variable} font-sans antialiased text-white text-base md:text-xl`}
-      >
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} antialiased`}>
         <ParticlesBackground />
         {children}
       </body>
