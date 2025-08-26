@@ -60,10 +60,10 @@ const Blog = () => {
         <div className="container mx-auto px-6">
           <div className="text-center">
             <h2 className="text-5xl md:text-6xl font-normal mb-4 text-gray-900 font-garamond">
-              Blog
+              Insights
             </h2>
             <p className="text-xl text-gray-600 font-garamond">
-              Učitavanje...
+              Loading...
             </p>
           </div>
         </div>
