@@ -79,10 +79,10 @@ const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Pretražite blog postove..."
+                  placeholder="Search blog posts..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-black font-garamond text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-black text-black font-garamond text-lg"
                   autoFocus
                 />
                 <button

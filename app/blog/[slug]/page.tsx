@@ -9,14 +9,15 @@ import Link from "next/link";
 import Image from "next/image";
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const resolvedParams = await params;
   const post = await client.fetch(blogQueries.getPostBySlug, {
-    slug: await params.slug,
+    slug: resolvedParams.slug,
   });
 
   if (!post) {
