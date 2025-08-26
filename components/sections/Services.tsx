@@ -70,11 +70,11 @@ const Services = () => {
                   alt="hatta ai"
                   className="w-full h-full object-cover transition-all duration-500 group-hover:opacity-0"
                 />
-                <div className="absolute inset-0  p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-secondary">
+                <div className="absolute inset-0  p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-primary-foreground">
                   {service.description.map((item, index) => (
                     <p
                       key={index}
-                      className="text-xl font-normal leading-tight text-center text-white"
+                      className="text-xl font-normal leading-tight text-center text-primary"
                     >
                       {item}
                     </p>
