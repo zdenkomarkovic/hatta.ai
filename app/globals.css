@@ -6,16 +6,16 @@
 
 :root {
   --bg: #000000;
-  --text: #FFFFFF;
-  --muted: #E6E6E6;
-  
+  --text: #ffffff;
+  --muted: #e6e6e6;
+
   /* zlato za glow */
-  --gold-1: #F3D27E;
-  --gold-2: #C8A951;
-  --gold-3: #B8912A;
-  
+  --gold-1: #f3d27e;
+  --gold-2: #c8a951;
+  --gold-3: #b8912a;
+
   --container: 1200px;
-  
+
   --background: 90, 3%, 14%;
   --foreground: 30, 1%, 29%;
   --card: 15 15 25;
@@ -24,7 +24,7 @@
   --popover-foreground: 250 250 250;
   --primary: 33, 22%, 46%;
   --primary-foreground: 49, 32%, 87%;
-  --secondary: 42, 39%, 73%;
+  --secondary: 41, 41%, 86%;
   --secondary-foreground: 210, 3%, 43%;
   --muted: 60, 3%, 86%;
   --muted-foreground: 161 161 170;
@@ -42,12 +42,14 @@
   border-color: hsl(var(--border));
 }
 
-html, body{
-margin:0; padding:0;
-background: var(--bg);
-color: var(--text);
-font-synthesis-weight: none;
-font-family: "Cormorant Garamond", serif;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-synthesis-weight: none;
+  font-family: "Cormorant Garamond", serif;
 }
 
 h1,
@@ -86,7 +88,7 @@ html {
 }
 
 .header-bar .logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 28px;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -105,93 +107,105 @@ html {
 }
 
 /* Hero Section */
-.hero{
-position: relative;
-isolation: isolate;
-min-height: 88vh;
-display: flex;
-align-items: flex-end;
-/* levo poravnanje kao u mockupu */
-text-align: left;
-overflow: hidden;
-background: var(--bg); /* koristi CSS varijablu */
-padding: 6rem 0 70px 0;
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 88vh;
+  display: flex;
+  align-items: flex-end;
+  /* levo poravnanje kao u mockupu */
+  text-align: left;
+  overflow: hidden;
+  background: var(--bg); /* koristi CSS varijablu */
+  padding: 6rem 0 70px 0;
 }
 
 /* Zlatni "glow" – apstraktni, bez slike */
-.hero::before{
-content:"";
-position:absolute; inset:-10% -20% -20% -20%;
-background:
-/* dijagonalni luk gore-levo → dole-desno */
-radial-gradient(60% 40% at 85% 20%,
-rgba(243,210,126,0.45) 0%,
-rgba(200,169,81,0.22) 28%,
-rgba(0,0,0,0) 60%)
-,
-radial-gradient(50% 35% at 95% 75%,
-rgba(243,210,126,0.35) 0%,
-rgba(200,169,81,0.14) 35%,
-rgba(0,0,0,0) 70%)
-,
-radial-gradient(35% 28% at 10% 95%,
-rgba(200,169,81,0.18) 0%,
-rgba(0,0,0,0) 70%);
-filter: blur(18px);
-mix-blend-mode: screen;
-pointer-events:none;
-z-index:0;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -10% -20% -20% -20%;
+  background:
+/* dijagonalni luk gore-levo → dole-desno */ radial-gradient(
+      60% 40% at 85% 20%,
+      rgba(243, 210, 126, 0.45) 0%,
+      rgba(200, 169, 81, 0.22) 28%,
+      rgba(0, 0, 0, 0) 60%
+    ),
+    radial-gradient(
+      50% 35% at 95% 75%,
+      rgba(243, 210, 126, 0.35) 0%,
+      rgba(200, 169, 81, 0.14) 35%,
+      rgba(0, 0, 0, 0) 70%
+    ),
+    radial-gradient(
+      35% 28% at 10% 95%,
+      rgba(200, 169, 81, 0.18) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+  filter: blur(18px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.hero::after{
-content:"";
-position:absolute; inset:0;
-background: linear-gradient(180deg, rgba(0,0,0,0.20), rgba(0,0,0,0.75) 80%);
-z-index:0; pointer-events:none;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.75) 80%
+  );
+  z-index: 0;
+  pointer-events: none;
 }
 
-.hero__inner{
-position: relative; z-index:1;
-width:100%;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 24px;
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.hero h1{
-font-family: "Cormorant Garamond", serif;
-font-weight: 500;
-letter-spacing: -0.3px;
-line-height: 1.06;
-font-size: clamp(2rem, 4.5vw, 3rem);
-color: #fff; /* bela kao McKinsey */
-margin: 0 0 1rem 0;
+.hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  line-height: 1.06;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  color: #fff; /* bela kao McKinsey */
+  margin: 0 0 1rem 0;
 }
 
-.hero p{
-font-family: "Cormorant Garamond", serif;
-font-weight: 400;
-font-style: italic;
-color: var(--muted); /* svetlo siva, visoka čitljivost */
-font-size: clamp(1.35rem, 2.3vw, 1.9rem);
-line-height: 1.6;
-margin: 0 0 2rem 0;
-max-width: 1200px;
+.hero p {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted); /* svetlo siva, visoka čitljivost */
+  font-size: clamp(1.35rem, 2.3vw, 1.9rem);
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+  max-width: 1200px;
 }
 
 /* ===== Dugme – belo, tanak okvir (McKinsey stil) ===== */
-.btn{
-display:inline-block;
-font-family: "Cormorant Garamond", serif;
-font-weight: 400;
-font-style: italic;
-font-size: clamp(1.35rem, 2.3vw, 1.9rem);
-padding: 0.6rem 1.8rem;
-border-radius: 2px;
-text-decoration: none;
-transition: all .25s ease;
+.btn {
+  display: inline-block;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(1.35rem, 2.3vw, 1.9rem);
+  padding: 0.6rem 1.8rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.25s ease;
 }
-p{color: #fff; /* bela kao McKinsey */
+p {
+  color: #fff; /* bela kao McKinsey */
 }
 
 .font-garamond {
@@ -237,17 +251,17 @@ textarea:-webkit-autofill:active {
   -webkit-text-fill-color: #ffffff !important;
   background-color: #000000 !important;
   border-color: #ffffff !important;
-} 
-
-.btn--outline{
-border: 1px solid #fff;
-color: #fff;
-background: transparent;
 }
 
-.btn--outline:hover{
-background: #fff;
-color: #000;
+.btn--outline {
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.btn--outline:hover {
+  background: #fff;
+  color: #000;
 }
 
 /* Mobile Responsiveness */

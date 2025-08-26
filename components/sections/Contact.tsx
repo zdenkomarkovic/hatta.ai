@@ -46,10 +46,8 @@ const Contact = () => {
           <h2 className="text-5xl md:text-6xl font-normal mb-16 font-garamond">
             Contact Us
           </h2>
-    
-          <p className="text-xl text-gray-300 font-garamond">
-            Drop us a line!
-          </p>
+
+          <p className="text-xl text-gray-300 font-garamond">Drop us a line!</p>
         </motion.div>
 
         <motion.div
@@ -123,18 +121,18 @@ const Contact = () => {
                 className="mt-1 w-4 h-4 border border-white bg-black flex items-center justify-center transition-colors"
               >
                 {emailList && (
-                  <svg 
-                    width="12" 
-                    height="12" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path 
-                      d="M20 6L9 17L4 12" 
-                      stroke="#ffffff" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="#ffffff"
+                      strokeWidth="2"
+                      strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                   </svg>
@@ -158,35 +156,35 @@ const Contact = () => {
                 SEND
               </motion.button>
             </div>
-                    </form>
+          </form>
 
           {/* Contact Information */}
           <div className="mt-16 text-center">
             <h3 className="text-4xl font-normal mb-8 text-gray-300 font-garamond">
-              HATTA AI
+              HATTA
             </h3>
             <div className="space-y-4 text-gray-300 font-garamond text-lg md:text-xl">
               <p>78, Avenue des Champs-Élysées, Bureau 326, 75008, Paris</p>
               <p className="mt-8">
-                <a 
-                  href="tel:+377680867818" 
+                <a
+                  href="tel:+377680867818"
                   className="hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer inline-block"
                 >
                   Phone number: +377 6 80 86 78 18
                 </a>
               </p>
               <p>
-                <a 
-                  href="mailto:contact@hatta.ai" 
+                <a
+                  href="mailto:contact@hatta.ai"
                   className="hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer inline-block"
                 >
                   Email: contact@hatta.ai
                 </a>
               </p>
               <p>
-                <a 
-                  href="https://instagram.com/hatta.ai" 
-                  target="_blank" 
+                <a
+                  href="https://instagram.com/hatta.ai"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer inline-block"
                 >
@@ -198,9 +196,16 @@ const Contact = () => {
         </motion.div>
 
         <div className="flex flex-col md:flex-row justify-center text-center gap-2 md:gap-10 border-t border-gray-800 mt-20 pt-8">
-          <p className="text-gray-400 font-garamond">&copy; 2025 HATTA.AI. All rights reserved.</p>
-          <a href="https://www.manikamwebsolutions.com/" target="_blank" className="text-gray-400 font-garamond hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer inline-block">
-            Website by: <span className="font-semibold"> ManikamWebSolutions</span>
+          <p className="text-gray-400 font-garamond">
+            &copy; 2025 HATTA. All rights reserved.
+          </p>
+          <a
+            href="https://www.manikamwebsolutions.com/"
+            target="_blank"
+            className="text-gray-400 font-garamond hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer inline-block"
+          >
+            Website by:{" "}
+            <span className="font-semibold"> ManikamWebSolutions</span>
           </a>
         </div>
       </div>
