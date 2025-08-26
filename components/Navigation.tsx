@@ -2,16 +2,18 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
+import SearchOverlay from "./SearchOverlay";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [activeSection] = useState("");
 
   const navItems = useMemo(() => [
     { id: "overview", label: "Overview" },
     { id: "about", label: "Our Approach" },
     { id: "services", label: "Services" },
-   
+    { id: "blog", label: "Blog" },
     { id: "contact", label: "Contact" },
   ], []);
 
@@ -87,6 +89,7 @@ const Navigation = () => {
           <motion.div
             whileTap={{ scale: 0.95 }}
             className="search-btn"
+            onClick={() => setIsSearchOpen(true)}
             style={{
               cursor: 'pointer',
               userSelect: 'none',
@@ -205,6 +208,11 @@ const Navigation = () => {
         </div>
       </motion.div>
 
+      {/* Search Overlay */}
+      <SearchOverlay 
+        isOpen={isSearchOpen} 
+        onClose={() => setIsSearchOpen(false)} 
+      />
     </>
   );
 };
