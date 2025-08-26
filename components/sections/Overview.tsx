@@ -2,11 +2,12 @@
 
 
 import { motion } from "framer-motion";
+import ParticlesBackground from "../ParticlesBackground";
 
 const Overview = () => {
   return (
     <section id="overview" className="hero">
-
+<ParticlesBackground />
 
       <div className="hero__inner">
         <div className="text-left">

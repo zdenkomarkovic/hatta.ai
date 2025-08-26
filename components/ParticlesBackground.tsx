@@ -16,13 +16,15 @@ const ParticlesBackground = () => {
       if (!particlesDiv) {
         particlesDiv = document.createElement("div");
         particlesDiv.id = "particles-js";
-        particlesDiv.style.position = "fixed";
+        particlesDiv.style.position = "absolute";
         particlesDiv.style.top = "0";
         particlesDiv.style.left = "0";
         particlesDiv.style.width = "100%";
-        particlesDiv.style.height = "100%";
+        particlesDiv.style.height = "88vh";
         particlesDiv.style.zIndex = "0";
         particlesDiv.style.pointerEvents = "none";
+        particlesDiv.style.transition = "opacity 0.3s ease, visibility 0.3s ease";
+        particlesDiv.style.overflow = "hidden";
         document.body.appendChild(particlesDiv);
       }
 
@@ -55,10 +57,10 @@ const ParticlesBackground = () => {
         // Clip-path koji omogućava particles na vrhu i dnu, samo leva strana se krije
         particlesDiv.style.clipPath = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
       } else {
-        // Van hero sekcije - normalno prikazivanje
-        particlesDiv.style.left = "0";
-        particlesDiv.style.width = "100%";
-        particlesDiv.style.clipPath = "none";
+        // Van hero sekcije - particles se ne vide jer su ograničeni na hero visinu
+        particlesDiv.style.left = "50%";
+        particlesDiv.style.width = "50%";
+        particlesDiv.style.clipPath = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
       }
     };
 

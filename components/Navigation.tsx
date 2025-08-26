@@ -17,7 +17,7 @@ const Navigation = () => {
 
   useEffect(() => {
     // Add any useEffect logic here if needed
-  }, [navItems]);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -78,17 +78,7 @@ const Navigation = () => {
             whileHover={{ scale: 1.05 }}
             className="logo"
             onClick={() => scrollToSection("overview")}
-            style={{
-              fontFamily: 'Cormorant Garamond, serif',
-              fontSize: '28px',
-              letterSpacing: '4px',
-              textTransform: 'uppercase',
-              fontWeight: 400,
-              color: '#111111',
-              flex: 1,
-              textAlign: 'center',
-              cursor: 'pointer'
-            }}
+
           >
             H A T T A
           </motion.div>
