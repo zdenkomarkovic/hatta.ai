@@ -109,7 +109,7 @@ const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
               ) : results.length === 0 ? (
                 <div className="p-6 text-center">
                   <p className="text-gray-600 font-garamond">
-                    Nema rezultata za "{searchTerm}"
+                  No results for &quot;{searchTerm}&quot;
                   </p>
                 </div>
               ) : (

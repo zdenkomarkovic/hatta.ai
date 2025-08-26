@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { client } from "@/lib/sanity";
 import { blogQueries } from "@/lib/sanity.queries";
 import { urlFor } from "@/lib/sanity";
+import Image from "next/image";
 
 interface BlogPost {
   _id: string;
@@ -62,7 +63,7 @@ const Blog = () => {
 
   if (loading) {
     return (
-      <section className="py-20 bg-white">
+      <section id="blog" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center">
             <h2 className="text-5xl md:text-6xl font-normal mb-4 text-gray-900 font-garamond">
@@ -87,17 +88,15 @@ const Blog = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-normal mb-4 text-gray-900 font-garamond">
-            Blog
+            Insights
           </h2>
-          <p className="text-xl text-gray-600 font-garamond max-w-2xl mx-auto">
-            Pronađite najnovije vesti i insights iz sveta AI-a i poslovne efikasnosti
-          </p>
+  
         </motion.div>
 
         {posts.length === 0 ? (
           <div className="text-center py-20">
             <p className="text-xl text-gray-600 font-garamond">
-              Trenutno nema blog postova. Proverite kasnije!
+              There are no blog posts at the moment. Check back later!
             </p>
           </div>
         ) : (
@@ -113,34 +112,28 @@ const Blog = () => {
                 >
                   <div className="relative h-48 overflow-hidden">
                     {post.featuredImage ? (
-                      <img
+                      <Image
                         src={urlFor(post.featuredImage).width(400).height(300).url()}
                         alt={post.featuredImageAlt || post.title}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        width={400}
+                        height={300}
                       />
                     ) : (
                       <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                        <span className="text-gray-400 font-garamond">Nema slike</span>
+                        <span className="text-gray-400 font-garamond">No image</span>
                       </div>
                     )}
                   </div>
                   
                   <div className="p-6">
                     <div className="flex items-center mb-3">
-                      {post.author?.avatar && (
-                        <img
-                          src={urlFor(post.author.avatar).width(32).height(32).url()}
-                          alt={post.author.name}
-                          className="w-8 h-8 rounded-full mr-3"
-                        />
-                      )}
+                    
                       <div>
                         <p className="text-sm text-gray-600 font-garamond">
-                          {post.author?.name || 'Anonimno'}
+                          {post.author?.name || ''}
                         </p>
-                        <p className="text-xs text-gray-500 font-garamond">
-                          {formatDate(post.publishedAt)}
-                        </p>
+
                       </div>
                     </div>
                     
