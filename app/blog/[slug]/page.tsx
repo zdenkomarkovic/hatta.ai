@@ -23,13 +23,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('sr-RS', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
 
   return (
     <>
