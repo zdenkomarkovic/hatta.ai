@@ -53,13 +53,6 @@ const Blog = () => {
     setDisplayCount(prev => Math.min(prev + 6, totalPosts));
   };
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('sr-RS', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
 
   if (loading) {
     return (

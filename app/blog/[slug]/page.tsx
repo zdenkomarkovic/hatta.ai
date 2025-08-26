@@ -5,7 +5,6 @@ import { blogQueries } from "@/lib/sanity.queries";
 import { urlFor } from "@/lib/sanity";
 import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
-import Navigation from "@/components/Navigation";
 import Link from "next/link";
 import Image from "next/image";
 
