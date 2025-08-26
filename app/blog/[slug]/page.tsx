@@ -1,5 +1,3 @@
-"use client";
-
 import { client } from "@/lib/sanity";
 import { blogQueries } from "@/lib/sanity.queries";
 import { urlFor } from "@/lib/sanity";
@@ -65,10 +63,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </h1>
               <div className="flex items-center justify-center space-x-4 text-lg font-garamond">
                 {post.author?.avatar && (
-                  <img
-                    src={urlFor(post.author.avatar).width(40).height(40).url()}
+                  <Image
+                    src={urlFor(post.author.avatar).width(40).height(40).url() || ''}
                     alt={post.author.name}
                     className="w-10 h-10 rounded-full"
+                    width={40}
+                    height={40}
                   />
                 )}
                 <span>{post.author?.name || ''}</span>
