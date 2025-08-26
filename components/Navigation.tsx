@@ -30,92 +30,97 @@ const Navigation = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
   return (
     <>
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className=""
+        className="header-bar"
         style={{
-          background: '#FFFFFF',
-          color: '#111111',
-          borderBottom: '1px solid #EDEDED',
+          background: '#ffffff',
+          width: '100%',
+          padding: '20px 0',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderBottom: '1px solid #f0f0f0',
           position: 'sticky',
           top: 0,
           zIndex: 1000
         }}
       >
-        <div className="container mx-auto" style={{ 
-          padding: '1rem 2rem',
+        <div style={{
+          width: '100%',
+          maxWidth: '1200px',
+          padding: '0 24px',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center'
         }}>
+          {/* Hamburger Menu Button */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold cursor-pointer"
-            onClick={() => scrollToSection("overview")}
-            style={{
-              fontFamily: 'Playfair Display, Georgia, serif',
-              fontWeight: 800,
-              color: '#111111'
-            }}
-          >
-            HATTA.AI
-          </motion.div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center text-xl">
-            {navItems.map((item) => (
-              <motion.button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-               className={`relative px-4 py-2 transition-colors border-b-2 ${
-                 activeSection === item.id ? "border-[#C8A951]" : "border-transparent"
-               }`}
-                style={{ 
-                  marginLeft: '1.5rem',
-                  color: '#111111',
-                  textDecoration: 'none',
-                  fontFamily: 'Inter, sans-serif',
-                 fontWeight: 500
-                }}
-                onMouseEnter={(e) => {
-                 e.currentTarget.style.borderBottomColor = '#C8A951';
-                }}
-                onMouseLeave={(e) => {
-                  if (activeSection !== item.id) {
-                   e.currentTarget.style.borderBottomColor = 'transparent';
-                  }
-                }}
-              >
-                {item.label}
-              </motion.button>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={toggleMobileMenu}
-            className="md:hidden p-2 text-black focus:outline-none"
-            aria-label="Toggle mobile menu"
+            className="menu-btn"
+            style={{
+              fontSize: '20px',
+              color: '#111111',
+              cursor: 'pointer',
+              userSelect: 'none'
+            }}
           >
-            <div className="w-6 h-6 flex flex-col justify-center items-center">
-              <motion.span
-                animate={isMobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-                className="w-6 h-0.5 bg-current mb-1 origin-center transition-all duration-300"
+            &#9776;
+          </motion.div>
+
+          {/* Logo */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="logo"
+            onClick={() => scrollToSection("overview")}
+            style={{
+              fontFamily: 'Cormorant Garamond, serif',
+              fontSize: '28px',
+              letterSpacing: '4px',
+              textTransform: 'uppercase',
+              fontWeight: 400,
+              color: '#111111',
+              flex: 1,
+              textAlign: 'center',
+              cursor: 'pointer'
+            }}
+          >
+            H A T T A
+          </motion.div>
+
+          {/* Search Button */}
+          <motion.div
+            whileTap={{ scale: 0.95 }}
+            className="search-btn"
+            style={{
+              cursor: 'pointer',
+              userSelect: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <svg 
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path 
+                d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" 
+                stroke="#111111" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
               />
-              <motion.span
-                animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="w-6 h-0.5 bg-current mb-1 transition-all duration-300"
-              />
-              <motion.span
-                animate={isMobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-                className="w-6 h-0.5 bg-current origin-center transition-all duration-300"
-              />
-            </div>
-          </motion.button>
+            </svg>
+          </motion.div>
         </div>
       </motion.nav>
 

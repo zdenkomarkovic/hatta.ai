@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { Inter} from "next/font/google";
+import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import ParticlesBackground from "@/components/ParticlesBackground";
 
-const inter = Inter({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600"],
 });
-
-
 
 export const metadata: Metadata = {
   title: "HATTA.ai - AI Consulting & Graph Machine Learning",
@@ -51,8 +49,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} antialiased`}>
+    <html lang="sr" className="scroll-smooth">
+      <body className={`${cormorant.className} antialiased`}>
         <ParticlesBackground />
         {children}
       </body>

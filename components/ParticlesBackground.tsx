@@ -40,6 +40,28 @@ const ParticlesBackground = () => {
       document.head.appendChild(script);
     };
 
+    const updateParticlesStyle = () => {
+      const particlesDiv = document.getElementById("particles-js");
+      if (!particlesDiv) return;
+
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const heroHeight = windowHeight * 0.88; // 88vh kao u hero sekciji
+
+      if (scrollY < heroHeight) {
+        // Na hero sekciji - ukosi efekat na desnoj strani, ali vidljiv na vrhu i dnu
+        particlesDiv.style.left = "50%";
+        particlesDiv.style.width = "50%";
+        // Clip-path koji omogućava particles na vrhu i dnu, samo leva strana se krije
+        particlesDiv.style.clipPath = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
+      } else {
+        // Van hero sekcije - normalno prikazivanje
+        particlesDiv.style.left = "0";
+        particlesDiv.style.width = "100%";
+        particlesDiv.style.clipPath = "none";
+      }
+    };
+
     const initParticles = () => {
       // Proveri da li je particles.js učitana
       if (typeof window.particlesJS === 'function') {
@@ -47,7 +69,7 @@ const ParticlesBackground = () => {
         window.particlesJS("particles-js", {
           particles: {
             number: {
-              value: 100,
+              value: 100, // Vraćam na 100 jer sada pokriva celu stranicu
               density: {
                 enable: true,
                 value_area: 800,
@@ -143,6 +165,12 @@ const ParticlesBackground = () => {
           },
           retina_detect: true,
         });
+
+        // Inicijalno postavi stil
+        updateParticlesStyle();
+
+        // Dodaj scroll event listener
+        window.addEventListener('scroll', updateParticlesStyle);
       } else {
         console.log("Particles.js not loaded yet, retrying...");
         // Pokušaj ponovo za 100ms
@@ -150,27 +178,19 @@ const ParticlesBackground = () => {
       }
     };
 
-    // Proveri da li je particles.js već učitan
-    if (typeof window.particlesJS !== 'undefined') {
-      initParticles();
-    } else {
-      loadParticles();
-    }
+    loadParticles();
 
+    // Cleanup function
     return () => {
-      // Cleanup
+      window.removeEventListener('scroll', updateParticlesStyle);
       const particlesDiv = document.getElementById("particles-js");
       if (particlesDiv) {
         particlesDiv.remove();
       }
-
-      // Ukloni script
-      const scripts = document.querySelectorAll('script[src*="particles"]');
-      scripts.forEach((script) => script.remove());
     };
   }, []);
 
-  return null; // Ne renderujemo ništa jer kreiramo div programski
+  return null;
 };
 
 export default ParticlesBackground;

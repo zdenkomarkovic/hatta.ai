@@ -22,8 +22,8 @@
   --card-foreground: 250 250 250;
   --popover: 15 15 25;
   --popover-foreground: 250 250 250;
-  --primary: 44, 52%, 55%;
-  --primary-foreground: 90, 1%, 35%;
+  --primary: 33, 22%, 46%;
+  --primary-foreground: 49, 32%, 87%;
   --secondary: 42, 39%, 73%;
   --secondary-foreground: 210, 3%, 43%;
   --muted: 60, 3%, 86%;
@@ -47,6 +47,7 @@ margin:0; padding:0;
 background: var(--bg);
 color: var(--text);
 font-synthesis-weight: none;
+font-family: "Cormorant Garamond", serif;
 }
 
 h1,
@@ -55,10 +56,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-weight: 600;
   line-height: 1.2;
-  color: hsl(var(--primary));
+  color: #fff; /* bela kao McKinsey */
 }
 
 html {
@@ -71,40 +72,37 @@ html {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+
 }
 
 /* Header Styling */
-header {
-  background: #FFFFFF;
-  color: #111111;
-  padding: 1rem 2rem;
+.header-bar {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #EDEDED;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-header a {
+.header-bar .logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 400;
   color: #111111;
-  text-decoration: none;
-  margin-left: 1.5rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
 }
 
-header a:hover {
-  border-bottom: 2px solid var(--gold-2); /* zlatni underline */
-}
-
-header .logo {
-  font-family: "Playfair Display", Georgia, serif;
-  font-weight: 800;
+.menu-btn,
+.search-btn {
+  font-size: 20px;
   color: #111111;
+  cursor: pointer;
+  user-select: none;
 }
 
 /* Hero Section */
@@ -113,12 +111,12 @@ position: relative;
 isolation: isolate;
 min-height: 88vh;
 display: flex;
-align-items: center;
+align-items: flex-end;
 /* levo poravnanje kao u mockupu */
 text-align: left;
 overflow: hidden;
 background: var(--bg); /* koristi CSS varijablu */
-padding: 6rem 0;
+padding: 6rem 0 70px 0;
 }
 
 /* Zlatni "glow" – apstraktni, bez slike */
@@ -156,41 +154,91 @@ z-index:0; pointer-events:none;
 .hero__inner{
 position: relative; z-index:1;
 width:100%;
-max-width: 900px;
-margin-left: max(24px, calc((100vw - var(--container)) / 2 + 24px));
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
 }
 
 .hero h1{
-font-family: "Playfair Display", Georgia, serif;
-font-weight: 800;
+font-family: "Cormorant Garamond", serif;
+font-weight: 500;
 letter-spacing: -0.3px;
 line-height: 1.06;
-font-size: clamp(2.6rem, 6vw, 4rem);
+font-size: clamp(2rem, 4.5vw, 3rem);
 color: #fff; /* bela kao McKinsey */
 margin: 0 0 1rem 0;
 }
 
 .hero p{
-font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-font-weight: 300;
+font-family: "Cormorant Garamond", serif;
+font-weight: 400;
+font-style: italic;
 color: var(--muted); /* svetlo siva, visoka čitljivost */
-font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+font-size: clamp(1.35rem, 2.3vw, 1.9rem);
 line-height: 1.6;
 margin: 0 0 2rem 0;
-max-width: 720px;
+max-width: 1200px;
 }
 
 /* ===== Dugme – belo, tanak okvir (McKinsey stil) ===== */
 .btn{
 display:inline-block;
-font-family: "Inter", sans-serif;
-font-weight: 500;
-font-size: 1rem;
-padding: 0.9rem 1.6rem;
+font-family: "Cormorant Garamond", serif;
+font-weight: 400;
+font-style: italic;
+font-size: clamp(1.35rem, 2.3vw, 1.9rem);
+padding: 0.6rem 1.8rem;
 border-radius: 2px;
 text-decoration: none;
 transition: all .25s ease;
 }
+p{color: #fff; /* bela kao McKinsey */
+}
+
+.font-garamond {
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* Custom checkbox styling */
+input[type="checkbox"]:checked {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+  color: #000000 !important;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✓";
+  color: #ffffff !important;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Autofill styling - prevent white background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #000000 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-color: #000000 !important;
+  border-color: #ffffff !important;
+}
+
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #000000 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-color: #000000 !important;
+  border-color: #ffffff !important;
+} 
 
 .btn--outline{
 border: 1px solid #fff;
@@ -215,11 +263,12 @@ color: #000;
   .hero p {
     max-width: 100%;
   }
-  header {
-    padding: 0.75rem 1rem;
+  .header-bar {
+    padding: 15px 20px;
   }
-  header a {
-    margin-left: 1rem;
+  .header-bar .logo {
+    font-size: 24px;
+    letter-spacing: 3px;
   }
 }
 

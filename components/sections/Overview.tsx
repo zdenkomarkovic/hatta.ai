@@ -15,7 +15,7 @@ const Overview = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            HATTA.AI
+          Intelligence. Efficiency. Profitability. Delivered by HATTA.
           </motion.h1>
 
           <motion.p
@@ -23,26 +23,14 @@ const Overview = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            AI consulting company specializing in{" "}
-            <span className="font-semibold">graph machine learning</span> and{" "}
-            <span className="font-semibold">topological deep learning</span>
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            We work at the frontier of research and consulting, translating
-            complex non-Euclidean methods into practical, high-impact business
-            solutions.
+           Tailored Artificial Intelligence solutions. Designed for leaders who demand more.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-start"
           >
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -57,18 +45,6 @@ const Overview = () => {
               Explore Our Services
             </motion.button>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() =>
-                document
-                  .getElementById("about")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="btn btn--outline"
-            >
-              Learn More
-            </motion.button>
           </motion.div>
         </div>
       </div>

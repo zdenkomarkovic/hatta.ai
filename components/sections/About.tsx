@@ -10,57 +10,62 @@ const About = () => {
   });
 
   return (
-    <section id="about" className="section-padding bg-background">
-      <div className="container mx-auto px-6">
+    <section id="about" className="section-padding bg-background glass-effect">
+      <div className="container mx-auto px-2 md:px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center "
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Approach</h2>
+          <h2 className="text-2xl md:text-4xl font-normal mb-6"> At HATTA, we deliver cutting-edge AI backed by years of research experience in machine learning across industry and academia, ensuring every solution is rigorous, impactful, and tailored to our clients.
+</h2>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 text-center"
+          className=" text-center"
         >
-          <div className="glass-effect rounded-xl p-8 max-w-6xl mx-auto space-y-5 text-muted">
-            <p className=" leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <div className="md:px-20 mx-auto space-y-6 text-base md:text-2xl leading-tight font-normal">
+            <p className="  ">
+            Our approach is grounded in three pillars:
             </p>
-            <p className=" leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
+            <div>
+            <p className=" ">
+            Precision by Design
             </p>
-            <p className=" leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum.
+            <p className="">
+            We deploy advanced topological deep learning, generative AI and computer vision models to deliver AI pipelines of exceptional accuracy. Each solution is designed to integrate seamlessly with existing workflows, while maintaining clarity, robustness, and interpretability.
+            </p></div>
+          
+            <div>
+            <p className=" ">
+            Responsible Supervision
+            </p>
+        
+            <p className=" ">
+            We use all our expertise to monitor and externally oversee AI implementation within organisations, ensuring every system is safe, compliant, and effective. From evaluating operational impact to validating outcomes, we make sure AI adoption meets strategic, ethical, and practical standards.
+            </p>
+            </div>
+            <div>
+            <p className=" ">
+            Driving Value and Efficiency
+            </p>
+            <p className=" ">
+            Beyond optimisation, we focus on increasing profitability, reducing headcount, and driving operational efficiency. By combining operational intelligence with generative capabilities, we help organisations unlock new business models, enhance customer engagement, and transform decision-making.
+            </p>
+            </div>
+            <p className=" ">
+            Our experts view AI as a strategic engine, powering the future of enterprise excellence and innovation. Think big. Build with HATTA
             </p>
           </div>
+
         </motion.div>
+
+
       </div>
     </section>
   );

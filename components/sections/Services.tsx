@@ -12,28 +12,29 @@ const Services = () => {
 
   const services = [
     {
-      title: "AI Agents",
+      title: "Bespoke AI solutions",
       description:
-        "Our BCG responsible AI consulting team helps organizations execute an strategic approach to responsible ai through a tailored program based on five pillars",
-      image: "/hero.jpg",
+       [ "We build advanced AI systems – from geometric to generative models – designed to scale.",
+        "Every pipeline is engineered for measurable outcomes: better performance, lower costs and faster results."],
+      image: "/image_1-min.png",
     },
     {
-      title: "Generative AI",
+      title: "AI Project Oversight",
       description:
-        "Our BCG responsible AI consulting team helps organizations execute an strategic approach to responsible ai through a tailored program based on five pillars",
-      image: "/hero.jpg",
+      [  "We supervise AI projects end-to-end, ensuring they are well-designed, correctly implemented, and deliver real results. From scoping to delivery, we reduce risks and guarantee that execution matches ambition."],
+      image: "/image_2-min.jpg",
     },
     {
-      title: "Responsible AI",
+      title: "C-Level Strategy & Education",
       description:
-        "Our BCG responsible AI consulting team helps organizations execute an strategic approach to responsible ai through a tailored program based on five pillars",
-      image: "/hero.jpg",
+        [ "True transformation starts at the top. We teach boards and executives about the frontier of AI and how it creates value in their business. The outcome: leaders who are aligned and confident to set direction."],
+      image: "/image_3-min.jpg",
     },
   ];
 
   return (
-    <section id="services" className="section-padding bg-foreground">
-      <div className="container mx-auto px-6">
+    <section id="services" className="section-padding bg-white">
+      <div className="container mx-auto px-2">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -41,19 +42,20 @@ const Services = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h2>
+          <h2 className="text-5xl md:text-7xl font-normal leading-tight text-black">Our Services</h2>
+          <p className="text-base md:text-2xl font-normal leading-tight -mt-2 italic text-black">Implement. Govern. Inspire</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-4">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="glass-effect rounded-xl hover-glow transition-all duration-300 overflow-hidden group cursor-pointer relative z-10"
+              className="   transition-all duration-300  group cursor-pointer relative z-10"
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-56 overflow-hidden">
                 <Image
                   src={service.image}
                   width={800}
@@ -61,14 +63,16 @@ const Services = () => {
                   alt="hatta ai"
                   className="w-full h-full object-cover transition-all duration-500 group-hover:opacity-0"
                 />
-                <div className="absolute inset-0 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gray-900/95 z-20">
-                  <p className="text-gray-300 leading-relaxed text-center">
-                    {service.description}
-                  </p>
+                <div className="absolute inset-0  p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-transparent">
+                 
+                    {service.description.map((item, index) => (
+                      <p key={index} className="text-xl font-normal leading-tight text-center text-black">{item}</p>
+                    ))}
+                 
                 </div>
               </div>
-              <div className="p-6 bg-gray-900/80">
-                <h3 className="text-2xl font-semibold text-white text-center">
+              <div className="py-3 bg-primary-foreground">
+                <h3 className="text-3xl font-semibold text-primary  text-center">
                   {service.title}
                 </h3>
               </div>
