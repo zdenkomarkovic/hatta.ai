@@ -23,13 +23,17 @@ export const metadata: Metadata = {
     "data science",
     "research consulting",
   ],
+  icons: {
+    icon: "/android-chrome-192x192.png",
+    apple: "/apple-touch-icon.png",
+  },
   authors: [{ name: "HATTA.ai" }],
   openGraph: {
     title: "HATTA.ai - AI Consulting & Graph Machine Learning",
     description:
       "AI consulting company specializing in graph machine learning and topological deep learning.",
     type: "website",
-    locale: "sr_RS",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
@@ -40,6 +44,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "https://www.hatta.ai",
   },
 };
 
