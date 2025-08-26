@@ -11,7 +11,7 @@ const Navigation = () => {
     { id: "overview", label: "Overview" },
     { id: "about", label: "Our Approach" },
     { id: "services", label: "Services" },
-    { id: "insights", label: "Podcast" },
+   
     { id: "contact", label: "Contact" },
   ], []);
 
@@ -132,7 +132,7 @@ const Navigation = () => {
           x: isMobileMenuOpen ? "0%" : "100%"
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className={`fixed top-0 right-0 h-full w-full bg-gray-900/95 backdrop-blur-lg z-40 md:hidden ${
+        className={`fixed top-0 right-0 h-full w-full bg-gray-900/95 backdrop-blur-lg z-40 lg:hidden ${
           isMobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
         }`}
       >
@@ -167,9 +167,54 @@ const Navigation = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={toggleMobileMenu}
-          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
         />
       )}
+
+      {/* Desktop Sidebar - Hidden on Mobile */}
+      <motion.div
+        initial={{ opacity: 0, x: "-100%" }}
+        animate={{
+          opacity: isMobileMenuOpen ? 1 : 0,
+          x: isMobileMenuOpen ? "0%" : "-100%"
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className={`fixed top-0 left-0 h-full w-64 bg-gray-900/95 backdrop-blur-lg z-40 hidden lg:block ${
+          isMobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col items-start justify-start h-full px-6 py-8 space-y-6">
+          {/* Close Button */}
+          <button
+            onClick={toggleMobileMenu}
+            className="self-end text-white text-2xl hover:text-gray-300 transition-colors mb-8"
+          >
+            ✕
+          </button>
+          
+          {navItems.map((item, index) => (
+            <motion.button
+              key={item.id}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{
+                opacity: isMobileMenuOpen ? 1 : 0,
+                x: isMobileMenuOpen ? 0 : -20
+              }}
+              transition={{ 
+                duration: 0.3, 
+                delay: isMobileMenuOpen ? index * 0.1 : 0 
+              }}
+              onClick={() => scrollToSection(item.id)}
+              className={`text-2xl font-semibold transition-colors hover:text-[#C8A951] text-left w-full ${
+                activeSection === item.id ? "text-[#C8A951]" : "text-white"
+              }`}
+            >
+              {item.label}
+            </motion.button>
+          ))}
+        </div>
+      </motion.div>
+
     </>
   );
 };
