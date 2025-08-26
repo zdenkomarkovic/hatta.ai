@@ -98,12 +98,12 @@ const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
             <div className="max-h-96 overflow-y-auto">
               {loading ? (
                 <div className="p-6 text-center">
-                  <p className="text-gray-600 font-garamond">Pretraživanje...</p>
+                  <p className="text-gray-600 font-garamond">Searching...</p>
                 </div>
               ) : searchTerm.trim().length < 2 ? (
                 <div className="p-6 text-center">
                   <p className="text-gray-600 font-garamond">
-                    Unesite najmanje 2 karaktera za pretragu
+                  Enter at least 2 characters to search.
                   </p>
                 </div>
               ) : results.length === 0 ? (
@@ -115,7 +115,7 @@ const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
               ) : (
                 <div className="p-4">
                   <p className="text-sm text-gray-500 mb-4 font-garamond">
-                    Pronađeno {results.length} rezultat(a)
+                    Found {results.length} result(s)
                   </p>
                   {results.map((post) => (
                     <motion.div
