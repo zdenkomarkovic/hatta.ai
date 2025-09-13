@@ -18,11 +18,11 @@ const ParticlesBackground = () => {
         particlesDiv.id = "particles-js";
         particlesDiv.style.position = "absolute";
         particlesDiv.style.top = "0";
-        particlesDiv.style.left = "0";
-        particlesDiv.style.width = "100%";
+        particlesDiv.style.left = "50%"; // Počinje od desne strane
+        particlesDiv.style.width = "50%"; // Pokriva samo desnu polovinu
         particlesDiv.style.height = "88vh";
         particlesDiv.style.zIndex = "0";
-        particlesDiv.style.pointerEvents = "none";
+        particlesDiv.style.pointerEvents = "auto"; // Omogući interakciju
         particlesDiv.style.transition =
           "opacity 0.3s ease, visibility 0.3s ease";
         particlesDiv.style.overflow = "hidden";
@@ -52,18 +52,15 @@ const ParticlesBackground = () => {
       const heroHeight = windowHeight * 0.88; // 88vh kao u hero sekciji
 
       if (scrollY < heroHeight) {
-        // Na hero sekciji - ukosi efekat na desnoj strani, ali vidljiv na vrhu i dnu
+        // Na hero sekciji - particles na desnoj strani
         particlesDiv.style.left = "50%";
         particlesDiv.style.width = "50%";
-        // Clip-path koji omogućava particles na vrhu i dnu, samo leva strana se krije
-        particlesDiv.style.clipPath =
-          "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
+        particlesDiv.style.clipPath = "none";
       } else {
-        // Van hero sekcije - particles se ne vide jer su ograničeni na hero visinu
+        // Van hero sekcije - particles se ne vide
         particlesDiv.style.left = "50%";
         particlesDiv.style.width = "50%";
-        particlesDiv.style.clipPath =
-          "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
+        particlesDiv.style.clipPath = "none";
       }
     };
 
@@ -74,7 +71,7 @@ const ParticlesBackground = () => {
         window.particlesJS("particles-js", {
           particles: {
             number: {
-              value: 100, // Vraćam na 100 jer sada pokriva celu stranicu
+              value: 100,
               density: {
                 enable: true,
                 value_area: 800,
@@ -133,7 +130,7 @@ const ParticlesBackground = () => {
             },
           },
           interactivity: {
-            detect_on: "window",
+            detect_on: "canvas", // Promenio sa "window" na "canvas"
             events: {
               onhover: {
                 enable: true,
@@ -178,7 +175,6 @@ const ParticlesBackground = () => {
         window.addEventListener("scroll", updateParticlesStyle);
       } else {
         console.log("Particles.js not loaded yet, retrying...");
-        // Pokušaj ponovo za 100ms
         setTimeout(initParticles, 100);
       }
     };
