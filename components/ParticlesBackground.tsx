@@ -23,7 +23,8 @@ const ParticlesBackground = () => {
         particlesDiv.style.height = "88vh";
         particlesDiv.style.zIndex = "0";
         particlesDiv.style.pointerEvents = "none";
-        particlesDiv.style.transition = "opacity 0.3s ease, visibility 0.3s ease";
+        particlesDiv.style.transition =
+          "opacity 0.3s ease, visibility 0.3s ease";
         particlesDiv.style.overflow = "hidden";
         document.body.appendChild(particlesDiv);
       }
@@ -55,18 +56,20 @@ const ParticlesBackground = () => {
         particlesDiv.style.left = "50%";
         particlesDiv.style.width = "50%";
         // Clip-path koji omogućava particles na vrhu i dnu, samo leva strana se krije
-        particlesDiv.style.clipPath = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
+        particlesDiv.style.clipPath =
+          "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
       } else {
         // Van hero sekcije - particles se ne vide jer su ograničeni na hero visinu
         particlesDiv.style.left = "50%";
         particlesDiv.style.width = "50%";
-        particlesDiv.style.clipPath = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
+        particlesDiv.style.clipPath =
+          "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
       }
     };
 
     const initParticles = () => {
       // Proveri da li je particles.js učitana
-      if (typeof window.particlesJS === 'function') {
+      if (typeof window.particlesJS === "function") {
         console.log("Initializing particles");
         window.particlesJS("particles-js", {
           particles: {
@@ -78,13 +81,13 @@ const ParticlesBackground = () => {
               },
             },
             color: {
-              value: "#dcdbda"
+              value: "#dcdbda",
             },
             shape: {
               type: "circle",
               stroke: {
                 width: 0,
-                color: "#dcdbda"
+                color: "#dcdbda",
               },
             },
             opacity: {
@@ -172,7 +175,7 @@ const ParticlesBackground = () => {
         updateParticlesStyle();
 
         // Dodaj scroll event listener
-        window.addEventListener('scroll', updateParticlesStyle);
+        window.addEventListener("scroll", updateParticlesStyle);
       } else {
         console.log("Particles.js not loaded yet, retrying...");
         // Pokušaj ponovo za 100ms
@@ -184,7 +187,7 @@ const ParticlesBackground = () => {
 
     // Cleanup function
     return () => {
-      window.removeEventListener('scroll', updateParticlesStyle);
+      window.removeEventListener("scroll", updateParticlesStyle);
       const particlesDiv = document.getElementById("particles-js");
       if (particlesDiv) {
         particlesDiv.remove();
