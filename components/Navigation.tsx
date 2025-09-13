@@ -9,13 +9,16 @@ const Navigation = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [activeSection] = useState("");
 
-  const navItems = useMemo(() => [
-    { id: "overview", label: "Overview" },
-    { id: "about", label: "Our Approach" },
-    { id: "services", label: "Services" },
-    { id: "blog", label: "Blog" },
-    { id: "contact", label: "Contact" },
-  ], []);
+  const navItems = useMemo(
+    () => [
+      { id: "overview", label: "Overview" },
+      { id: "about", label: "Our Approach" },
+      { id: "services", label: "Our Services" },
+      { id: "blog", label: "Insights" },
+      { id: "contact", label: "Contact" },
+    ],
+    []
+  );
 
   useEffect(() => {
     // Add any useEffect logic here if needed
@@ -40,36 +43,38 @@ const Navigation = () => {
         animate={{ y: 0 }}
         className="header-bar"
         style={{
-          background: '#ffffff',
-          width: '100%',
-          padding: '20px 0',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          borderBottom: '1px solid #f0f0f0',
-          position: 'sticky',
+          background: "#ffffff",
+          width: "100%",
+          padding: "20px 0",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          borderBottom: "1px solid #f0f0f0",
+          position: "sticky",
           top: 0,
-          zIndex: 1000
+          zIndex: 1000,
         }}
       >
-        <div style={{
-          width: '100%',
-          maxWidth: '1200px',
-          padding: '0 24px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center'
-        }}>
+        <div
+          style={{
+            width: "100%",
+            maxWidth: "1200px",
+            padding: "0 24px",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
           {/* Hamburger Menu Button */}
           <motion.div
             whileTap={{ scale: 0.95 }}
             onClick={toggleMobileMenu}
             className="menu-btn"
             style={{
-              fontSize: '20px',
-              color: '#111111',
-              cursor: 'pointer',
-              userSelect: 'none'
+              fontSize: "20px",
+              color: "#111111",
+              cursor: "pointer",
+              userSelect: "none",
             }}
           >
             &#9776;
@@ -80,7 +85,6 @@ const Navigation = () => {
             whileHover={{ scale: 1.05 }}
             className="logo"
             onClick={() => scrollToSection("overview")}
-
           >
             H A T T A
           </motion.div>
@@ -91,25 +95,25 @@ const Navigation = () => {
             className="search-btn"
             onClick={() => setIsSearchOpen(true)}
             style={{
-              cursor: 'pointer',
-              userSelect: 'none',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
+              cursor: "pointer",
+              userSelect: "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <svg 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path 
-                d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" 
-                stroke="#111111" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
+              <path
+                d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z"
+                stroke="#111111"
+                strokeWidth="2"
+                strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
@@ -122,7 +126,7 @@ const Navigation = () => {
         initial={{ opacity: 0, x: "100%" }}
         animate={{
           opacity: isMobileMenuOpen ? 1 : 0,
-          x: isMobileMenuOpen ? "0%" : "100%"
+          x: isMobileMenuOpen ? "0%" : "100%",
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`fixed top-0 right-0 h-full w-full bg-gray-900/95 backdrop-blur-lg z-40 lg:hidden ${
@@ -136,15 +140,17 @@ const Navigation = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: isMobileMenuOpen ? 1 : 0,
-                y: isMobileMenuOpen ? 0 : 20
+                y: isMobileMenuOpen ? 0 : 20,
               }}
-              transition={{ 
-                duration: 0.3, 
-                delay: isMobileMenuOpen ? index * 0.1 : 0 
+              transition={{
+                duration: 0.3,
+                delay: isMobileMenuOpen ? index * 0.1 : 0,
               }}
               onClick={() => scrollToSection(item.id)}
               className={`text-2xl font-semibold transition-colors hover:border-b-2 hover:border-[#C8A951] ${
-                activeSection === item.id ? "text-[#C8A951] border-b-2 border-[#C8A951]" : "text-white"
+                activeSection === item.id
+                  ? "text-[#C8A951] border-b-2 border-[#C8A951]"
+                  : "text-white"
               }`}
             >
               {item.label}
@@ -169,7 +175,7 @@ const Navigation = () => {
         initial={{ opacity: 0, x: "-100%" }}
         animate={{
           opacity: isMobileMenuOpen ? 1 : 0,
-          x: isMobileMenuOpen ? "0%" : "-100%"
+          x: isMobileMenuOpen ? "0%" : "-100%",
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`fixed top-0 left-0 h-full w-64 bg-gray-900/95 backdrop-blur-lg z-40 hidden lg:block ${
@@ -184,18 +190,18 @@ const Navigation = () => {
           >
             ✕
           </button>
-          
+
           {navItems.map((item, index) => (
             <motion.button
               key={item.id}
               initial={{ opacity: 0, x: -20 }}
               animate={{
                 opacity: isMobileMenuOpen ? 1 : 0,
-                x: isMobileMenuOpen ? 0 : -20
+                x: isMobileMenuOpen ? 0 : -20,
               }}
-              transition={{ 
-                duration: 0.3, 
-                delay: isMobileMenuOpen ? index * 0.1 : 0 
+              transition={{
+                duration: 0.3,
+                delay: isMobileMenuOpen ? index * 0.1 : 0,
               }}
               onClick={() => scrollToSection(item.id)}
               className={`text-2xl font-semibold transition-colors hover:text-[#C8A951] text-left w-full ${
@@ -209,9 +215,9 @@ const Navigation = () => {
       </motion.div>
 
       {/* Search Overlay */}
-      <SearchOverlay 
-        isOpen={isSearchOpen} 
-        onClose={() => setIsSearchOpen(false)} 
+      <SearchOverlay
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
       />
     </>
   );

@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
-
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "HATTA.ai - AI Consulting & Graph Machine Learning",
+  title: "HATTA - AI Consulting",
   description:
     "AI consulting company specializing in graph machine learning and topological deep learning. Translating complex non-Euclidean methods into practical business solutions.",
   keywords: [
@@ -57,10 +56,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sr" className="scroll-smooth">
-      <body className={`${cormorant.className} antialiased`}>
-        
-        {children}
-      </body>
+      <body className={`${cormorant.className} antialiased`}>{children}</body>
     </html>
   );
 }
