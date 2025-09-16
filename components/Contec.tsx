@@ -17,43 +17,11 @@ const Contact = () => {
   });
 
   const [emailList, setEmailList] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
-  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
-    setErrorMessage("");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          emailList,
-        }),
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-        setEmailList(false);
-      } else {
-        const errorData = await response.json();
-        setSubmitStatus("error");
-        setErrorMessage(errorData.message || "Došlo je do greške. Pokušajte ponovo.");
-      }
-    } catch (error) {
-      setSubmitStatus("error");
-      setErrorMessage("Došlo je do greške. Pokušajte ponovo.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Handle form submission
+    console.log("Form submitted:", formData);
   };
 
   const handleChange = (
@@ -88,19 +56,6 @@ const Contact = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-2xl mx-auto"
         >
-          {/* Status Messages */}
-          {submitStatus === "success" && (
-            <div className="mb-6 p-4 bg-green-900 border border-green-700 text-green-100 rounded">
-              Poruka je uspešno poslata! Hvala vam što ste nas kontaktirali.
-            </div>
-          )}
-
-          {submitStatus === "error" && (
-            <div className="mb-6 p-4 bg-red-900 border border-red-700 text-red-100 rounded">
-              {errorMessage}
-            </div>
-          )}
-
           <form onSubmit={handleSubmit} className="space-y-8">
             <div>
               <label
@@ -116,8 +71,7 @@ const Contact = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                disabled={isSubmitting}
-                className="w-full bg-black border border-white rounded-none px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-gray-300 focus:bg-black transition-colors font-garamond disabled:opacity-50"
+                className="w-full bg-black border border-white rounded-none px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-gray-300 focus:bg-black transition-colors font-garamond"
                 placeholder="Your name"
               />
             </div>
@@ -136,8 +90,7 @@ const Contact = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                disabled={isSubmitting}
-                className="w-full bg-black border border-white rounded-none px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-gray-300 focus:bg-black transition-colors font-garamond disabled:opacity-50"
+                className="w-full bg-black border border-white rounded-none px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-gray-300 focus:bg-black transition-colors font-garamond"
                 placeholder="your@email.com"
               />
             </div>
@@ -156,8 +109,7 @@ const Contact = () => {
                 rows={6}
                 value={formData.message}
                 onChange={handleChange}
-                disabled={isSubmitting}
-                className="w-full bg-black border border-white rounded-none px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-gray-300 focus:bg-black transition-colors resize-none font-garamond disabled:opacity-50"
+                className="w-full bg-black border border-white rounded-none px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-gray-300 focus:bg-black transition-colors resize-none font-garamond"
                 placeholder="Tell us about your project..."
               />
             </div>
@@ -166,8 +118,7 @@ const Contact = () => {
               <button
                 type="button"
                 onClick={() => setEmailList(!emailList)}
-                disabled={isSubmitting}
-                className="mt-1 w-4 h-4 border border-white bg-black flex items-center justify-center transition-colors disabled:opacity-50"
+                className="mt-1 w-4 h-4 border border-white bg-black flex items-center justify-center transition-colors"
               >
                 {emailList && (
                   <svg
@@ -188,7 +139,7 @@ const Contact = () => {
                 )}
               </button>
               <label
-                onClick={() => !isSubmitting && setEmailList(!emailList)}
+                onClick={() => setEmailList(!emailList)}
                 className="md:text-lg text-sm text-gray-300 font-garamond leading-relaxed cursor-pointer"
               >
                 Sign up for our email list for updates, promotions, and more.
@@ -200,10 +151,9 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                disabled={isSubmitting}
-                className="bg-white text-black py-4 px-8 font-semibold text-lg transition-all font-garamond hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-white text-black py-4 px-8 font-semibold text-lg transition-all font-garamond hover:bg-gray-100"
               >
-                {isSubmitting ? "SENDING..." : "SEND"}
+                SEND
               </motion.button>
             </div>
           </form>
