@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://hatta.ai
+
+# Sitemaps
+Sitemap: https://hatta.ai/sitemap.xml
