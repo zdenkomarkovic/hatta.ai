@@ -21,40 +21,45 @@ const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
-    setErrorMessage("");
+// ... existing code ...
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          emailList,
-        }),
-      });
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus("idle");
+  setErrorMessage("");
 
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-        setEmailList(false);
-      } else {
-        const errorData = await response.json();
-        setSubmitStatus("error");
-        setErrorMessage(errorData.message || "Došlo je do greške. Pokušajte ponovo.");
-      }
-    } catch (error) {
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...formData,
+        emailList,
+      }),
+    });
+
+    if (response.ok) {
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+      setEmailList(false);
+    } else {
+      const errorData = await response.json();
       setSubmitStatus("error");
-      setErrorMessage("Došlo je do greške. Pokušajte ponovo.");
-    } finally {
-      setIsSubmitting(false);
+      setErrorMessage(errorData.message || "Došlo je do greške. Pokušajte ponovo.");
     }
-  };
+  } catch (error) {
+    console.error("Contact form error:", error);
+    setSubmitStatus("error");
+    setErrorMessage("Došlo je do greške. Pokušajte ponovo.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+// ... existing code ...
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
